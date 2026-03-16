@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/news",
+      "destination": "https://newsdata.io/api/1/news?apikey=pub_040cfc34c0654896b7d33ea9ef23d73b&language=ar"
+    },
+    {
+      "source": "/api/football/:path*",
+      "destination": "https://v3.football.api-sports.io/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "x-apisports-key", "value": "438d35114ddd461a0c7aae414a345019" }
+      ]
+    }
+  ]
+}
